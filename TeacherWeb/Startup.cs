@@ -8,10 +8,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
-using StudentWeb.Models;
 
-namespace StudentWeb
+namespace TeacherWeb
 {
     public class Startup
     {
@@ -34,9 +32,6 @@ namespace StudentWeb
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
-            services.AddDbContext<StudentWebContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("StudentWebContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

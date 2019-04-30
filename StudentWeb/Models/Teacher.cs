@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace StudentWeb.Models
 {
-    //学生
-    public class Student
+    //老师
+    public class Teacher
     {
         //主键
         public int ID { get; set; }
@@ -14,7 +15,9 @@ namespace StudentWeb.Models
         //姓名
         public string Name { get; set; }
 
-        //学生所在的班级
-        public SchoolClass MyClass { get; set; }
+        public int? AdminClassID { get; set; }
+
+        //老师作为班主任管理的班级
+        public SchoolClass AdminClass { get; set; }
     }
 }
